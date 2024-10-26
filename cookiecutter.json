@@ -1,0 +1,9 @@
+{
+    "templates": {
+        "service": {
+            "path": "./service",
+            "title": "Service",
+            "description": "A cookiecutter template for a service"
+        }
+    }
+}
