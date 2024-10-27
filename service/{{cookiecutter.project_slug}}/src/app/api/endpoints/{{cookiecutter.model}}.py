@@ -4,14 +4,16 @@ from ...schemas.{{cookiecutter.model}} import {{cookiecutter.model_info.upper_na
 from fastapi_sqlalchemy_toolkit import ModelManager
 from ...fastapi_crud_toolkit import FastAPICrudToolkit
 from ...authenticator import Authenticator
-from ...managers.{{cookiecutter.model}} import {{cookiecutter.model}}Manager
+from ...managers.{{cookiecutter.model}} import {{cookiecutter.model_info.upper_name}}Manager
 
 authenticator = Authenticator()
-manager = {{cookiecutter.model}}Manager({{cookiecutter.model_info.upper_name}})
+manager = {{cookiecutter.model_info.upper_name}}Manager({{cookiecutter.model_info.upper_name}})
 
 r = FastAPICrudToolkit(
     manager,
     get_session,
-{{cookiecutter.model_info.upper_name}}Create, {{cookiecutter.model_info.upper_name}}Update, {{cookiecutter.model_info.upper_name}}Read,
-    authenticator,
+create_scheme={{cookiecutter.model_info.upper_name}}Create,
+update_scheme={{cookiecutter.model_info.upper_name}}Update,
+read_scheme={{cookiecutter.model_info.upper_name}}Read,
+authenticator=authenticator,
 ).get_crud_router()

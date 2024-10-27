@@ -9,5 +9,6 @@
   "model_info": {
     "upper_name": "{{cookiecutter.model.title()}}"
   },
-  "is_debug": true
+  "is_debug": true,
+  "need_test_data": true
 }
