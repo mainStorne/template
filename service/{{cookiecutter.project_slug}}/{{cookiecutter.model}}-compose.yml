@@ -18,7 +18,7 @@ services:
       context: {{cookiecutter.project_slug}}
       dockerfile: ./Dockerfile
     volumes:
-      - {{cookiecutter.project_slug}}/src:/src
+      - ./{{cookiecutter.project_slug}}/src:/src
     env_file:
       - {{cookiecutter.project_slug}}/.env
     environment:
