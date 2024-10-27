@@ -1,6 +1,7 @@
 {
   "project_slug": "project",
   "project_type": ["HTML", "Rest API"],
+  "fastapi_root_path": "",
   "user_id": ["int", "uuid"],
   "model": "model",
   "model_plural": "{{cookiecutter.model}}",
@@ -8,6 +9,5 @@
   "model_info": {
     "upper_name": "{{cookiecutter.model.title()}}"
   },
-  "required_username": false,
   "is_debug": true
 }

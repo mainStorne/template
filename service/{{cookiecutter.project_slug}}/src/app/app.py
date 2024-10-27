@@ -12,6 +12,6 @@ async def lifespan(app):
 
 app = FastAPI(lifespan=lifespan)
 {% else %}
-app = FastAPI(){% endif %}
+app = FastAPI(root_path="{{cookiecutter.fastapi_root_path}}"){% endif %}
 
-app.include_router(api, prefix='/api')
+app.include_router(api)
