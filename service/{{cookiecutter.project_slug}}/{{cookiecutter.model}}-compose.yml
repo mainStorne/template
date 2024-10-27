@@ -1,0 +1,34 @@
+
+services:
+  {{cookiecutter.model}}_db:
+    image: postgres
+    env_file:
+      -  backend/{{cookiecutter.model}}/.env
+    container_name: web2-postgres
+    expose:
+      - 5432
+    volumes:
+      - {{cookiecutter.model}}_pgdata:/var/lib/postgresql/data
+
+
+  {{cookiecutter.model}}_service:
+    build:
+      context: ./backend/{{cookiecutter.model}}
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./backend/{{cookiecutter.model}}/src:/src
+    env_file:
+      - backend/{{cookiecutter.model}}/.env
+    environment:
+      POSTGRES_HOST: {{cookiecutter.model}}_db
+      POSTGRES_PORT: 5432
+
+    depends_on:
+      - {{cookiecutter.model}}_db
+    container_name: {{cookiecutter.model}}
+    expose:
+      - 80
+
+volumes:
+  {{cookiecutter.model}}_pgdata: {}
+
