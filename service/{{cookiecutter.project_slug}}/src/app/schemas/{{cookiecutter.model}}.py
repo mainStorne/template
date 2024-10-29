@@ -17,4 +17,3 @@ class {{cookiecutter.model_info.upper_name}}Create({{cookiecutter.model_info.upp
 
 {{cookiecutter.model_info.upper_name}}Update = make_partial_model({{cookiecutter.model_info.upper_name}}Create)
 
-UC = TypeVar('UC', bound={{cookiecutter.model_info.upper_name}}Create)

@@ -23,7 +23,6 @@ services:
       - {{cookiecutter.project_slug}}/.env
     environment:
       POSTGRES_HOST: {{cookiecutter.project_slug}}_db
-      POSTGRES_PORT: 5432
 
     depends_on:
       - {{cookiecutter.project_slug}}_db

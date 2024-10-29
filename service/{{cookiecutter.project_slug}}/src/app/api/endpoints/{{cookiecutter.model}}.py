@@ -6,9 +6,9 @@ from ...fastapi_crud_toolkit import FastAPICrudToolkit
 from ...authenticator import Authenticator
 from ...managers.{{cookiecutter.model}} import {{cookiecutter.model_info.upper_name}}Manager
 
-authenticator = Authenticator()
-manager = {{cookiecutter.model_info.upper_name}}Manager({{cookiecutter.model_info.upper_name}})
 
+manager = {{cookiecutter.model_info.upper_name}}Manager({{cookiecutter.model_info.upper_name}})
+authenticator = Authenticator(manager)
 r = FastAPICrudToolkit(
     manager,
     get_session,

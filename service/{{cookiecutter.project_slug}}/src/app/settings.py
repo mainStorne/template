@@ -16,7 +16,13 @@ class Settings(BaseSettings):
     POSTGRES_HOST: str
     POSTGRES_PORT: int
     POSTGRES_DB: str
-    SERVICE_ACCOUNTS_URL: str
+    TOKEN_URL: str
+    API_GATEWAY: str
+    REDIS_HOST: str
+    REDIS_PORT: int
+    JWT_PRIVATE_KEY: str
+    JWT_AUDIENCE: str
+    JWT_ALGORITHM: str = 'HS256'
     SQLALCHEMY_DATABASE_URL: str | None = None
 
 

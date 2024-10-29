@@ -1,10 +1,8 @@
 from typing import Protocol, Coroutine, Callable, Any
 
+from fastapi_sqlalchemy_toolkit import ModelManager
+
 
 class BaseAuthenticator(Protocol):
-
-    def current_user(self, optional: bool = False,
-                     active: bool = False,
-                     verified: bool = False,
-                     superuser: bool = False) -> Callable[[Any], Coroutine[Any, Any, Any]]:
-        pass
+    def __init__(self, manager: ModelManager):
+        self.manager = manager

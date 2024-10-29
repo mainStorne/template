@@ -62,3 +62,4 @@ aiosqlite{% endif %}
 {% if cookiecutter.need_test_data %}
 faker
 polyfactory{% endif %}
+redis
