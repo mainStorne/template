@@ -1,4 +1,8 @@
 from .base import Base
+from sqlalchemy.orm import (
+    Mapped,
+    mapped_column,
+)
 {% if cookiecutter.model_id == 'int' %}
 from .base import IDMixin
 {% endif %}

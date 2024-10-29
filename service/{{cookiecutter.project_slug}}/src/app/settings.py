@@ -3,12 +3,10 @@ from pathlib import Path
 from pydantic import FieldValidationInfo, PostgresDsn, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent
-
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=ROOT_DIR / ".env", case_sensitive=True, extra="allow"
+        env_file=Path(__file__).resolve(strict=True).parent.parent.parent / ".local.env", case_sensitive=True, extra="allow"
     )
     # PostgreSQL Database Connection
     POSTGRES_USER: str
